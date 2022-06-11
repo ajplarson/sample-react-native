@@ -1,11 +1,14 @@
 import React from "react";
 import { Image, View, StyleSheet } from "react-native";
 import colors from "../config/colors";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+
 function ViewImageScreen(props) {
   return (
     <View style={styles.container}>
       <View style={styles.closeIcon}></View>
       <View style={styles.deleteIcon}></View>
+      <MaterialCommunityIcons name="email" size={60} />
       <Image
         resizeMode="contain"
         style={styles.image}

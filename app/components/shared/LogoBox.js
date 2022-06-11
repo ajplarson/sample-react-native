@@ -1,6 +1,8 @@
 import React from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 
+import AppText from "../../components/AppText";
+
 function LogoBox(props) {
   return (
     <View style={styles.logoContainer}>
@@ -8,7 +10,7 @@ function LogoBox(props) {
         style={styles.logo}
         source={require("../../assets/logo-red.png")}
       />
-      <Text>Sell What You Don't Need</Text>
+      <AppText>Sell What You Don't Need</AppText>
     </View>
   );
 }
