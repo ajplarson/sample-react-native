@@ -1,7 +1,7 @@
 import React from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 
-import AppText from "../../components/AppText";
+import AppText from "../AppText";
 
 function LogoBox(props) {
   return (
