@@ -1,4 +1,8 @@
 import {
+  useDeviceOrientation,
+  useDimensions,
+} from "@react-native-community/hooks";
+import {
   StyleSheet,
   Text,
   View,
@@ -7,25 +11,28 @@ import {
   SafeAreaView,
   Alert,
   TouchableHighlight,
+  Dimensions,
 } from "react-native";
 
 export default function App() {
-  const alert = () => {
-    Alert.alert("Color", "what is your favorite color?", [
-      { text: "blue", onPress: () => console.log("blue") },
-      { text: "orange", onPress: () => console.log("orange") },
-    ]);
-  };
-
-  const alertWithPrompt = () => {
-    Alert.prompt("Color", "what is your favorite color?", (text) =>
-      console.log(text)
-    );
-  };
+  console.log(useDimensions());
+  const { landscape } = useDeviceOrientation();
 
   return (
     <SafeAreaView style={styles.container}>
-      <Button color="orange" title="Click me" onPress={alert} />
+      <View
+        style={{
+          backgroundColor: "blue",
+          width: "100%",
+          height: landscape ? "100%" : "30%",
+        }}
+      >
+        <Button
+          color="orange"
+          title="Click me"
+          onPress={() => console.log("hola")}
+        />
+      </View>
     </SafeAreaView>
   );
 }
